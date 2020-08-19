@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws java.lang.Exception {
+        try {
+        Scanner sc = new Scanner(System.in);
+        int count = 0;
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        while (n !=0) {
+            long value = sc.nextLong();
+            if (value % k == 0) {
+                count++;
+            }
+            n--;
+        }
+        System.out.println(count);
+    } catch (Exception e) {
+        return;
+    }
+    }
+}
