@@ -1,0 +1,29 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		try {
+		    
+		     Scanner sc = new Scanner(System.in);
+        float withdrawalAmount = (float) sc.nextInt();
+        float initialAccountBalance = sc.nextFloat();
+        if ((int) initialAccountBalance % 5 == 0 && initialAccountBalance > withdrawalAmount + 0.50) {
+            initialAccountBalance -= (withdrawalAmount + 0.50);
+            System.out.format("%.2f", initialAccountBalance);
+        } else  {
+            System.out.format("%.2f", initialAccountBalance);
+        }
+		    
+		    
+		} catch (Exception e) {
+		    return;
+		}
+	}
+}
