@@ -1,0 +1,57 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef {
+    public static void main(String[] args) throws java.lang.Exception {
+        // your code goes here
+        try {
+            FastReader sc = new FastReader();
+            StringBuilder sb = new StringBuilder();
+            int t = sc.nextInt();
+            for (int a = 0; a < t; a++) {
+                int n = sc.nextInt();
+                int temp = n;
+                int noOfDigit = 0;
+                while (temp > 0) {
+                    temp /= 10;
+                    noOfDigit++;
+                }
+                int lastDigit = n % 10;
+                int firstDigit = n / (int) (Math.pow(10,(int) Math.log10(n)));
+                System.out.println(firstDigit + lastDigit);
+            }
+
+
+        } catch (Exception e) {
+            return;
+        }
+    }
+
+    public static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+    }
+}
