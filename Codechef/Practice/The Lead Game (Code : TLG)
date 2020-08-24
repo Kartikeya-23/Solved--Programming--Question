@@ -1,0 +1,100 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef {
+    public static void main(String[] args) throws java.lang.Exception {
+        // your code goes here
+        try {
+            FastReader sc = new FastReader();
+            StringBuilder sb = new StringBuilder();
+            int t= sc.nextInt();
+            int lead = Integer.MIN_VALUE;
+            int player = 0;
+            int scoreOfOne = 0;
+            int scoreOfTwo = 0;
+
+            for (int i = 0; i < t; i++) {
+
+                boolean isfFirstPlayer = false;
+                boolean isSecondPlayer = false;
+                int scoreOfPlayerOne = sc.nextInt();
+                scoreOfOne = scoreOfOne + scoreOfPlayerOne;
+                int scoreOfPlayerSecond = sc.nextInt();
+                scoreOfTwo += scoreOfPlayerSecond;
+                int tempLead = 0;
+                if (scoreOfOne > scoreOfTwo) {
+                    tempLead = scoreOfOne - scoreOfTwo;
+                    isfFirstPlayer = true;
+                } else {
+                        tempLead = scoreOfTwo - scoreOfOne;
+                        isSecondPlayer = true;
+                }
+                if (tempLead > lead) {
+                    lead = tempLead;
+                    if(isfFirstPlayer) {
+                        player = 1;
+                    } else {
+                        player = 2;
+                    }
+                }
+            }
+            System.out.println(player + " " + lead);
+
+        } catch (Exception e) {
+            return;
+        }
+    }
+
+    public static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        long nextLong()
+        {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble()
+        {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine()
+        {
+            String str = "";
+            try
+            {
+                str = br.readLine();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+}
+
